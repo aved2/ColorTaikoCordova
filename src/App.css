@@ -1,0 +1,360 @@
+body {
+  /* overflow-y: hidden; */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.title {
+  text-align: center;
+  font-family: 'DotGothic16', sans-serif;
+  padding-bottom: 0px;
+}
+
+.option-switch {
+  float: right;
+}
+
+.settings {
+  float: left;
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background-color: #0056b3;
+  }
+
+  .button:active {
+    background-color: #004080;
+  }
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  /* background-color: rgb(176, 229, 248); */
+}
+
+.input-container {
+  display: flex;
+  margin-bottom: 10px;
+  height: 20px;
+}
+
+label {
+  text-align: center;
+  border-radius: 0.5vh;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'DotGothic16', sans-serif;
+}
+
+
+#addOne,
+#removeOne {
+  margin: 5px 10px 0px 15px;
+  padding: 20px 60px;
+  position: relative;
+  height: 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px rgb(116, 107, 91);
+}
+
+#addOne:hover,
+#removeOne:hover {
+  transform: scale(1.1);
+}
+
+.input-container label {
+  margin-right: 20px;
+  justify-content: center;
+  border-color: #000;
+  align-items:center;
+  height: 30px;
+}
+
+.input-container input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 20px;
+  text-align: center;
+  margin-right: 20px;
+  border-color: #000;
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  box-sizing: content-box;
+  display: flex;
+}
+
+.input-container-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-container {
+  flex: 1;
+  margin-right: 20px;
+  height: 40px;
+}
+
+.input-container:last-child {
+  margin-right: 0;
+}
+
+.vertices-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; 
+  height: 30px;
+  overflow: hidden;
+  margin-bottom: 40vh;
+  margin-top: 100px;
+}
+
+.dot {
+  font-size: 5rem;
+  padding: 1vh;
+  width: 8px;
+  height: 8px;
+  outline: none;
+  background-color: rgb(227, 213, 194);
+  border-style: solid;
+  border-color: black;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-shadow: 2px 2px gray;
+}
+
+.dot:hover {
+  transform: scale(1.5);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #1f1f1f;
+  color: rgb(227, 213, 194);
+}
+
+.dark-mode .title {
+  color: rgb(227, 213, 194);
+}
+
+.dark-mode label {
+  background-color: rgb(227, 213, 194);
+  color: #555;
+}
+
+.dark-mode #addOne,
+.dark-mode #removeOne {
+  background-color: rgb(227, 213, 194);
+  color: #555;
+}
+
+.react-flow__viewport {
+  /* transform: translate(0, 0) !important; */
+}
+
+.dot {
+  cursor: pointer; /* Indicates the dots are clickable */
+  transition: transform 0.3s ease; /* Smooth transition for scaling on hover */
+}
+
+.container svg line {
+  stroke: #000;
+  /* position:absolute; */
+  stroke-width: 2; /* Line thickness */
+}
+
+
+#undoButton {
+  position: absolute;
+  font-size: 10px;
+  font-weight: bold;
+  border: 2px solid #000;
+  border-radius: 5px;
+  background-color: rgb(96, 192, 209);
+  font-family: 'DotGothic16', sans-serif;
+  cursor: pointer;
+  z-index: 15; 
+  right: 80px;
+  top: 25px;
+  padding: 10px;
+  height: 30px;
+  width: 50px;
+  text-align: center;
+}
+
+#settingsButton {
+  position: absolute;
+  font-size: 10px;
+  font-weight: bold;
+  border: 2px solid #000;
+  border-radius: 5px;
+  background-color: rgb(96, 192, 209);
+  font-family: 'DotGothic16', sans-serif;
+  cursor: pointer;
+  z-index: 15; 
+  left: 10px;
+  top: 25px;
+  padding: 10px;
+  height: 30px;
+  width: 60px;
+}
+.container svg {
+  z-index: -1; /* Ensures SVG doesn't interfere with clicking on dots */
+}
+
+.dark-mode .dot {
+  background-color: rgb(227, 213, 194);
+  box-shadow: 2px 2px #555;
+}
+
+/* Mode switch button */
+#modeSwitch {
+  position: absolute;
+  right: 10px;
+  padding: 10px;
+  font-size: 10px;
+  font-weight: bold;
+  border: 2px solid #000;
+  border-radius: 5px;
+  background-color: rgb(96, 192, 209);
+  font-family: 'DotGothic16', sans-serif;
+  cursor: pointer;
+  z-index: 10;
+  top: 25px;
+  height: 30px;
+  width: 50px;
+  text-align: center;
+}
+
+.option-wrap {
+  margin-bottom: 50px;
+}
+
+.option-title {
+  overflow: hidden;
+}
+
+.svg-content {
+  position: relative;
+  height: 210px;
+  bottom: 35px;
+  margin-top: 5px;
+  padding-top: 10px;
+}
+
+.input-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+/* Modal styles */
+.modal {
+  display: block; /* Ensure the modal is visible */
+  font-family: 'DotGothic16', sans-serif;
+  position: fixed;
+  z-index: 9999; /* Ensure the modal appears on top of other elements */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 20% auto; /* Center the modal vertically and horizontally */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Adjust width as needed */
+  max-width: 400px; /* Limit maximum width of the modal */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-modal {
+  padding: 10px 20px;
+  display: block;
+  margin: 100px auto 0;
+  font-size: 18px;
+}
+
+.overlay {
+  background: rgba(49,49,49,0.8);
+}
+
+.modal2 {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 10000;
+  overflow: auto;
+  background-color: lightgrey;
+}
+
+.modal-content {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #f1f1f1;
+  padding: 14px 28px;
+  border-radius: 3px;
+  max-width: 600px;
+  min-width: 300px;
+  background-color: lightcyan;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 7px;
+}
+
+body.active-modal {
+  overflow-y: hidden;
+}
